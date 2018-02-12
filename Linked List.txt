@@ -1,0 +1,535 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// INSERT AT BEGINNING.....
+/*
+typedef struct Node{
+    int data;
+    struct Node* next;
+};*head=NULL;
+
+
+void Print();
+void Insert(int x);
+int main()
+{
+    int i,n,x;
+    printf("Enter the total  number of elements \n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the number \n");
+        scanf("%d",&x);
+        Insert(x);
+        Print();
+    }
+    return 0;
+}
+
+void Insert(int x)
+{
+   struct Node*  temp=malloc(sizeof(struct Node));
+    temp->data=x;
+    temp->next=head;
+    head=temp;
+}
+
+void Print()
+{
+        struct Node* temp=head;
+        printf("List is : ");
+        while(temp!=NULL)
+        {
+            printf("---->%d",temp->data);
+            temp=temp->next;
+        }
+        printf("\n");
+}
+*/
+
+
+
+
+// INSERT AT Nth POSITION.....
+/*
+typedef struct Node{
+    int data;
+    struct Node* next;
+};*head=NULL;
+
+void Print();
+void Insert(int x);
+void InsertAtMid(int x1,int pos);
+int main()
+{
+    int i,pos,x1;
+    int n,x;
+    printf("Enter the total  number of elements \n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the number \n");
+        scanf("%d",&x);
+        Insert(x);
+        Print();
+    }
+
+      printf("Enter the new number to enter \n");
+      scanf("%d",&x1);
+      printf("Enter the position \n");
+      scanf("%d",&pos);
+      InsertAtMid(x1,pos);
+      Print();
+    return 0;
+}
+
+void Insert(int x)
+{
+   struct Node*  temp=malloc(sizeof(struct Node));
+    temp->data=x;
+    temp->next=head;
+    head=temp;
+}
+
+// FUNCTION TO ENTER A NUMBER AT Nth POSITION.....
+void InsertAtMid(int x1,int pos)
+{
+    int j;
+     struct Node*  temp2=malloc(sizeof(struct Node));
+     printf("size of temp2=%d\n",sizeof(struct Node));
+     struct Node*  temp1=head;
+      printf("size of temp1=%d\n",sizeof(temp1));
+    temp2->data=x1;
+    temp2->next=NULL;
+    for(j=0;j<pos-2;j++)
+    {
+        temp1=temp1->next;
+    }
+    temp2->next=temp1->next;
+    temp1->next=temp2;
+}
+
+void Print()
+{
+        struct Node* temp=head;
+        printf("List is : ");
+        while(temp!=NULL)
+        {
+            printf("---->%d",temp->data);
+            temp=temp->next;
+        }
+        printf("\n");
+}
+*/
+
+
+
+// DELETE FROM NTH POSITION.....
+/*
+typedef struct Node{
+    int data;
+    struct Node* next;
+};
+
+struct Node* head;
+void Delete(int x);
+void Print();
+void Delete(int pos);
+int main()
+{
+    int i,pos,x1;
+    head=NULL;
+    int n,x;
+    printf("Enter the total  number of elements \n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the number \n");
+        scanf("%d",&x);
+        Insert(x);
+        Print();
+    }
+
+      printf("Enter the position to delete \n");
+      scanf("%d",&pos);
+      Delete(pos);
+      Print();
+    return 0;
+}
+
+void Insert(int x)
+{
+   struct Node*  temp=malloc(sizeof(struct Node));
+    temp->data=x;
+    temp->next=head;
+    head=temp;
+}
+
+// FUNCTION TO DELETE A NUMBER AT Nth POSITION.....
+void Delete(int pos)
+{
+     int j;
+     struct Node*  temp2=head;
+     struct Node*  temp1=head;
+     for(j=0;j<pos-2;j++)
+     {
+          temp1=temp1->next;
+          temp2=temp1->next;
+     }
+    temp1->next=temp2->next;
+    temp2->next=NULL;
+}
+
+
+void Print()
+{
+        struct Node* temp=head;
+        printf("List is : ");
+        while(temp!=NULL)
+        {
+            printf("---->%d",temp->data);
+            temp=temp->next;
+        }
+        printf("\n");
+}
+*/
+
+
+
+//COUNT THE NUMBER OF NODES.....
+/*
+typedef struct Node{
+    int data;
+    struct Node* next;
+};
+
+struct Node* head;
+void Insert(int x);
+void Print();
+void Count();
+int main()
+{
+    int i,pos,x1;
+    head=NULL;
+    int n,x;
+    printf("Enter the total  number of elements \n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the number \n");
+        scanf("%d",&x);
+        Insert(x);
+        Print();
+    }
+
+      printf("Number of nodes : ");
+      Count();
+      return 0;
+}
+
+void Insert(int x)
+{
+   struct Node*  temp=malloc(sizeof(struct Node));
+    temp->data=x;
+    temp->next=head;
+    head=temp;
+}
+
+
+
+void Count()
+{
+        int count=0;
+        struct Node* temp=head;
+        while(temp!=NULL)
+        {
+            temp=temp->next;
+            count++;
+        }
+         printf("\n");
+         printf("%d",count);
+}
+
+void Print()
+{
+        struct Node* temp=head;
+        printf("List is : ");
+        while(temp!=NULL)
+        {
+            printf("---->%d",temp->data);
+            temp=temp->next;
+        }
+        printf("\n");
+}
+*/
+
+
+
+
+
+// REVERSE A STRING USING LINKED LIST.....
+/*
+struct Node
+{
+   int data;
+   struct Node *next;
+}*top = NULL;
+
+void push(int);
+void pop();
+void display();
+struct Node* Reverse(struct Node* p);
+
+void main()
+{
+   int choice, value;
+
+   printf("\n:: Stack using Linked List ::\n");
+   while(1){
+      printf("\n****** MENU ******\n");
+      printf("1. Push\n2. Pop\n3. Display\n4. Reverse\n");
+      printf("Enter your choice: ");
+      scanf("%d",&choice);
+      switch(choice){
+	 case 1: printf("Enter the value to be insert: ");
+		 scanf("%d", &value);
+		 push(value);
+		 break;
+	 case 2: pop(); break;
+	 case 3: display(); break;
+	 case 4: {top=Reverse(top);} break;
+	 default: printf("\nWrong selection!!! Please try again!!!\n");
+      }
+   }
+}
+void push(int value)
+{
+   struct Node *newNode;
+   newNode = (struct Node*)malloc(sizeof(struct Node));
+   newNode->data = value;
+   if(top == NULL)
+      newNode->next = NULL;
+   else
+      newNode->next = top;
+   top = newNode;
+   printf("\nInsertion is Success!!!\n");
+}
+void pop()
+{
+   if(top == NULL)
+      printf("\nStack is Empty!!!\n");
+   else{
+      struct Node *temp = top;
+      printf("\nDeleted element: %d", temp->data);
+      top = temp->next;
+      free(temp);
+   }
+}
+void display()
+{
+   if(top == NULL)
+      printf("\nStack is Empty!!!\n");
+   else{
+      struct Node *temp = top;
+      while(temp->next != NULL){
+	 printf("%d--->",temp->data);
+	 temp = temp -> next;
+      }
+      printf("%d--->NULL",temp->data);
+   }
+}
+
+struct Node* Reverse(struct Node* top)
+{
+    struct Node *current,*prev,*next1;
+    current = top;
+    prev=NULL;
+    while(current!=NULL)
+    {
+        next1= current->next;
+        current->next=prev;
+        prev=current;
+        current =next1;
+    }
+
+    top=prev;
+    return top;
+}
+*/
+
+
+
+
+// MOVE MIDDLE ELEMENT TO FRONT IN LL.....
+/*
+typedef struct Node{
+    int data;
+    struct Node* next;
+};*head;
+
+
+void Print();
+void Insert(int x);
+void setMiddleHead(struct Node* head);
+int main()
+{
+    int i,n,x;
+    head=NULL;
+    printf("Enter the total  number of elements \n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the number \n");
+        scanf("%d",&x);
+        Insert(x);
+        Print();
+    }
+    setMiddleHead( head);   // This is important...dont write(struct node* head)
+    Print();
+    return 0;
+}
+
+void Insert(int x)
+{
+   struct Node*  temp=malloc(sizeof(struct Node));
+    temp->data=x;
+    temp->next=head;
+    head=temp;
+}
+
+void Print()
+{
+        struct Node* temp=head;
+        printf("List is : ");
+        while(temp!=NULL)
+        {
+            printf("---->%d",temp->data);
+            temp=temp->next;
+        }
+        printf("\n");
+}
+
+
+void setMiddleHead(struct Node* head)
+{
+	if (head == NULL)
+		return;
+
+	// To traverse list nodes one by one
+	struct Node* one_node = head;
+	struct Node** temp = &head;
+
+	// To traverse list nodes by skipping
+	// one.
+	struct Node* two_node = head;
+
+	// To keep track of previous of middle
+	struct Node* prev = NULL;
+	while (two_node != NULL && two_node->next != NULL) {
+
+
+		prev = one_node;
+
+
+		two_node = two_node->next->next;
+
+
+		one_node = one_node->next;
+
+	}
+
+
+    (*temp)=head;
+    prev->next = prev->next->next;
+	printf("1\n");
+	Print();
+
+	one_node->next = head;
+	printf("2\n");
+	Print();
+
+	 (*temp)= one_node;
+	 printf("value of one_node = %d\n", *head);
+	printf("value of star star temp = %d\n", **temp);
+	printf("value of star temp = %d\n", *temp);
+	Print();
+}
+*/
+
+
+
+//INSERT AT Nth POSITION (DOUBLY LL).....
+/*
+typedef struct Node{
+    int data;
+    struct Node* next;
+    struct Node* prev;
+};
+
+struct Node* head;
+void Print();
+void Insert(int x);
+void InsertAtMid(int x1,int pos);
+int main()
+{
+    int i,pos,x1;
+    head=NULL;
+    int n,x;
+    printf("Enter the total  number of elements \n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the number \n");
+        scanf("%d",&x);
+        Insert(x);
+        Print();
+    }
+      printf("Enter the new number to enter \n");
+      scanf("%d",&x1);
+      printf("Enter the position \n");
+      scanf("%d",&pos);
+      InsertAtMid(x1,pos);
+      Print();
+      return 0;
+}
+
+void Insert(int x)
+{
+   struct Node*  temp=malloc(sizeof(struct Node));
+    temp->data=x;
+    temp->next=head;
+    head=temp;
+}
+
+
+void InsertAtMid(int x1,int pos)
+{
+    int j;
+     struct Node*  temp2=malloc(sizeof(struct Node));
+     struct Node*  temp1=head;
+    temp2->data=x1;
+    temp2->next=NULL;
+    for(j=0;j<pos-2;j++)
+    {
+        temp1=temp1->next;
+    }
+    temp2->next=temp1->next;
+    temp1->next=temp2;
+    temp2->prev=temp1;
+
+}
+
+
+void Print()
+{
+        struct Node* temp=head;
+        printf("List is : ");
+        while(temp!=NULL)
+        {
+            printf("---->%d",temp->data);
+            temp=temp->next;
+        }
+        printf("\n");
+}
+*/
+
