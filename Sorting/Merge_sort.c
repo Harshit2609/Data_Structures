@@ -1,11 +1,11 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-void printArray(int A[], int size)
+void printArray(int arr[], int size)
 {
     int i;
     for (i=0; i < size; i++)
-        printf("%d ", A[i]);
+        printf("%d ", arr[i]);
     printf("\n");
 }
 
@@ -63,7 +63,7 @@ void mergesort(int arr[],int l,int r){
 
 int main(){
 
-int arr[]={8,12,5,8,20};
+int arr[]={8,12,5,9,20};
 int arr_size= sizeof(arr)/sizeof(arr[0]);
 
 mergesort(arr,0,arr_size-1);
