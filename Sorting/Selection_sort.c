@@ -13,13 +13,14 @@ void swap(int *xp, int *yp)
 void selectionSort(int arr[], int n)
 {
     int i,j,smallest;
-     for(j=0;j<n-1;j++)
+    for(j=0;j<n-1;j++)
     {
-    smallest=j;
-    for(i=j+1;i<n;i++){
-        if(arr[i]<arr[smallest]){
+        smallest=j;
+        for(i=j+1;i<n;i++){
+            if(arr[i]<arr[smallest])
+            {
             smallest=i;
-        }
+            }
         swap(&arr[smallest],&arr[j]);
         }
     }
