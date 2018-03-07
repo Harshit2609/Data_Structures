@@ -29,7 +29,7 @@ void main()
 		 break;
 	 case 2: pop(); break;
 	 case 3: display(); break;
-     case 4: Check();  break;
+     	 case 4: Check();  break;
 	 default: printf("\nWrong selection!!! Please try again!!!\n");
       }
    }
