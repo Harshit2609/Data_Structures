@@ -90,14 +90,14 @@ void Check()
 
         else if(val2->data == val1->data+1 || val2->data == val1->data-1)
             {
-                printf("***Yessir\n");
+                printf("***Yes\n");
                 pop();
                 pop();
             }
 
         else
         {
-            printf("***Nosir\n");
+            printf("***No\n");
             pop();
             pop();
         }
