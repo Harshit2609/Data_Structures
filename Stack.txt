@@ -68,9 +68,9 @@ void push(int value)
    if(top == NULL)
       newNode->next = NULL;
    else
-    newNode->next = top;
-        top = newNode;
-        printf("\nInsertion is Success!!!\n");
+      newNode->next = top;
+      top = newNode;
+      printf("\nInsertion is Success!!!\n");
 }
 
 void Check()
